@@ -14,11 +14,9 @@ public abstract class GameObjects {
     }
 
 
-    /** receives a grid as argument so all objects use this grid
-     *
-     * @param grid
+    /** constructor
      */
-    public void setGrid(Grid grid){
+    public GameObjects(Grid grid){
         this.grid = grid;
     }
 
