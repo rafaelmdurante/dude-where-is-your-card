@@ -16,8 +16,9 @@ public abstract class GameObjects {
 
     /** constructor
      */
-    public GameObjects(Grid grid){
+    public GameObjects(Grid grid, String picName){
         this.grid = grid;
+        position = new Position(grid, picName);
     }
 
 

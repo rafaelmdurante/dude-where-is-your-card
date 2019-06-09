@@ -8,14 +8,17 @@ public class Position {
     private int row;
     private Grid grid;
     private Picture picture;
+    private String picName;
 
-    public Position(Grid grid) {
+    public Position(Grid grid, String picName) {
         this.grid = grid;
+        this.picName = picName;
         col = (int) (Math.random() * grid.getCols());
         row = (int) (Math.random() * grid.getRows());
     }
 
-     public Position(int col, int row, Grid grid) {
+     public Position(int col, int row, Grid grid, String picName) {
+        this.picName = picName;
         this.grid = grid;
         this.col = col;
         this.row = row;
