@@ -9,7 +9,7 @@ public class Card extends GameObjects implements Catchable {
     private Grid grid;
     // Card attributes
     private boolean caught;
-
+    
     // Methods from SuperClass
     public Position getPosition() {
         return position;
