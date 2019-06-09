@@ -32,7 +32,7 @@ public class Position {
         picture.delete();
     }
 
-    public void choosePicture(String picName) {
+    public void choosePicture() {
         int column = grid.colToX(col);
         int rows = grid.rowToY(row);
         picture = new Picture(column, rows, picName);

@@ -13,8 +13,8 @@ public abstract class Person extends GameObjects {
      *
      * @param grid
      */
-    public Person(Grid grid) {
-        super(grid);
+    public Person(Grid grid, String picName) {
+        super(grid, picName);
     }
 
     public abstract void move(Direction direction);

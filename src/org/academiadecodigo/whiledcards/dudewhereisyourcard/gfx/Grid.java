@@ -30,20 +30,22 @@ public class Grid {
         rectangle.draw();
     }
 
+
+    /*
     /**
      * return random position
-     */
+
     public Position makeGridPosition() {
         return new Position(this);
     }
 
     /**
      * return position
-     */
+
     public Position makeGridPosition(int cols, int rows) {
         return new Position(cols, rows, this);
     }
-
+*/
     /**
      * convert rows into pixels
      *

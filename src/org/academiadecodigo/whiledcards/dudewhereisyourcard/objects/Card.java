@@ -9,7 +9,18 @@ public class Card extends GameObjects implements Catchable {
     private Grid grid;
     // Card attributes
     private boolean caught;
-    
+
+
+    /**
+     * constructor
+     *
+     * @param grid
+     */
+    public Card(Grid grid, String picName) {
+        super(grid, picName);
+    }
+
+
     // Methods from SuperClass
     public Position getPosition() {
         return position;
@@ -27,4 +38,6 @@ public class Card extends GameObjects implements Catchable {
     public void setCaught() {
         caught = true;
     }
+
+
 }

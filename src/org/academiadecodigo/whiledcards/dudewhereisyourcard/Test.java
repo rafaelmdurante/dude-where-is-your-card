@@ -10,8 +10,8 @@ public class Test {
         Grid grid = new Grid(35,35);
         grid.init();
 
-        Position pos = new Position(grid);
-        pos.choosePicture("beer1.png");
+        Position pos = new Position(grid, "beer2.png");
+        pos.choosePicture();
         pos.show();
     }
 }
