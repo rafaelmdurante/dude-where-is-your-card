@@ -4,7 +4,6 @@ import org.academiadecodigo.whiledcards.dudewhereisyourcard.gfx.Direction;
 import org.academiadecodigo.whiledcards.dudewhereisyourcard.gfx.DirectionRandomizable;
 import org.academiadecodigo.whiledcards.dudewhereisyourcard.gfx.Grid;
 import org.academiadecodigo.whiledcards.dudewhereisyourcard.objects.Catchable;
-import org.academiadecodigo.whiledcards.dudewhereisyourcard.objects.GameObjects;
 
 public class Friend extends Person implements Catchable, DirectionRandomizable {
 

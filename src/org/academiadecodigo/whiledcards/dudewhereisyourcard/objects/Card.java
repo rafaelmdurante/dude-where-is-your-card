@@ -2,7 +2,7 @@ package org.academiadecodigo.whiledcards.dudewhereisyourcard.objects;
 
 import org.academiadecodigo.whiledcards.dudewhereisyourcard.gfx.*;
 
-public class Card extends GameObjects implements Catchable {
+public class Card extends GameObject implements Catchable {
 
     // Attributes from SuperClass
     private Position position;

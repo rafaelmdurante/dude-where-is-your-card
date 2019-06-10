@@ -2,7 +2,7 @@ package org.academiadecodigo.whiledcards.dudewhereisyourcard.objects;
 
 import org.academiadecodigo.whiledcards.dudewhereisyourcard.gfx.Grid;
 
-public class Beer extends GameObjects implements Catchable {
+public class Beer extends GameObject implements Catchable {
 
     private boolean caught;
 

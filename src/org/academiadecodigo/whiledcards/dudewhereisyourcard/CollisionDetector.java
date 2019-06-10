@@ -1,19 +1,19 @@
 package org.academiadecodigo.whiledcards.dudewhereisyourcard;
 
-import org.academiadecodigo.whiledcards.dudewhereisyourcard.objects.GameObjects;
+import org.academiadecodigo.whiledcards.dudewhereisyourcard.objects.GameObject;
 import org.academiadecodigo.whiledcards.dudewhereisyourcard.gfx.Position;
 
 public class CollisionDetector {
 
-    private GameObjects[] gameObjects;
+    private GameObject[] gameObjects;
 
-    public CollisionDetector(GameObjects[] objects) {
+    public CollisionDetector(GameObject[] gameObjects) {
         this.gameObjects = objects;
     }
 
     public boolean isUnSafe(Position pos) {
 
-        for (GameObjects o : gameObjects) {
+        for (GameObject o : gameObjects) {
 
             if (o.getPosition()!= pos && o.getPosition().equals(pos)) {
                 return true;
@@ -26,22 +26,22 @@ public class CollisionDetector {
     }
 
     /**
-     * Checks for collisions with specific car
+     * Checks for collisions with specific gameObject
      * Requires iterating the array once
-     * @param car
+     * @param
      */
-    public void check(GameObjects gameObjects) {
+    public void check(GameObject gameObject) {
 
-        for (Car ic : cars) {
+        for (GameObject ig : gameObjects) {
 
             // No point in checking collisions with self
-            if (ic == car) {
+            if (ig == gameObject) {
                 continue;
             }
 
-            if (ic.getPos().equals(car.getPos())) {
-                ic.crash();
-                car.crash();
+            if (ig.getPosition().equals(gameObject.getPosition())) {
+                ig.collide();
+                gameObject.collide();
             }
         }
 
