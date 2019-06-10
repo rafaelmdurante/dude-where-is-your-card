@@ -37,7 +37,10 @@ public class Position {
         int rows = grid.rowToY(row);
         picture = new Picture(column, rows, picName);
     }
-    
+
+
+
+
 
     /** switch for directions
      *
@@ -45,6 +48,9 @@ public class Position {
      * @param distance
      */
     public void moveInDirection(Direction direction, int distance) {
+
+        int oldCol = getCol();
+        int oldRow = getRow();
 
         switch (direction) {
 
@@ -65,6 +71,14 @@ public class Position {
                 break;
 
         }
+
+        int newCol = getCol();
+        int newRow = getRow();
+        int difX = grid.colToX(newCol) - grid.colToX(oldCol);
+        int difY = grid.rowToY(newRow) - grid.rowToY(oldRow);
+
+        picture.translate(difX, difY);
+
     }
 
 
