@@ -13,7 +13,7 @@ public class Guard extends Person implements DirectionRandomizable {
     }
 
     @Override
-    public void move(Direction direction) {
+    public void move() {
         
     }
 }

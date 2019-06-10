@@ -8,14 +8,29 @@ public abstract class Person extends GameObjects {
     private int speed;
     private Direction currentDirection;
 
-
     /** constructor
      *
      * @param grid
      */
-    public Person(Grid grid, String picName) {
+
+
+    public Person(Grid grid, String picName, int speed) {
         super(grid, picName);
+        this.speed = speed;
     }
 
-    public abstract void move(Direction direction);
+    public abstract void move();
+
+
+    public void walk(Direction direction, int speed) {
+        for (int i = 0; i < speed; i++) {
+            getPosition().moveInDirection(NewDirection, distance 1);
+        }
+    }
+
+
+    public int getSpeed() {
+        return speed;
+    }
+
 }
