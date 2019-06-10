@@ -7,7 +7,7 @@ import org.academiadecodigo.whiledcards.dudewhereisyourcard.objects.characteres.
 
 
 public class Test {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         Grid grid = new Grid(25,15);
         grid.init();
@@ -20,7 +20,9 @@ public class Test {
 
         Friend friend = new Friend(grid, "green.png", 1);
         while(true) {
+            Thread.sleep(150);
             friend.move();
         }
+
     }
 }

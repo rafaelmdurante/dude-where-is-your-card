@@ -37,7 +37,6 @@ public class Friend extends Person implements Catchable, DirectionRandomizable {
         super.walk(chooseDirection(), getSpeed());
     }
 
-
     @Override
     public boolean isCaught() {
         return caught;
