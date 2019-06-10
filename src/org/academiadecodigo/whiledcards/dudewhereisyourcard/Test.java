@@ -32,15 +32,15 @@ public class Test {
         Beer beer = new Beer(grid,"beer.png");
 
         GameObject[] g = {guard, beer, cadet, friend};
+        //GameObject[] g = {guard, beer, cadet};
 
-        CollisionDetector detector = new CollisionDetector(g);
+        //CollisionDetector detector = new CollisionDetector(g);
         cadet.move();
 
         while(true) {
             Thread.sleep(150);
 
-
-            detector.isUnSafe();
+            //detector.isUnSafe();
             friend.move();
             guard.move();
         }
