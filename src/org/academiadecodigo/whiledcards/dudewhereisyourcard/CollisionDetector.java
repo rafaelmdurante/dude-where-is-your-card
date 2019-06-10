@@ -9,7 +9,6 @@ import org.academiadecodigo.whiledcards.dudewhereisyourcard.objects.characteres.
 import org.academiadecodigo.whiledcards.dudewhereisyourcard.objects.characteres.Guard;
 
 public class CollisionDetector {
-    /*
     private GameObject[] gameObjects;
     private Position cadetPosition;
 
@@ -41,7 +40,6 @@ public class CollisionDetector {
      * Requires iterating the array once
      * @param
      */
-    /*
 
     private void checkGuard(GameObject guard) {
         for (GameObject ig: gameObjects) {
@@ -94,7 +92,6 @@ public class CollisionDetector {
         }
 
     }
-    */
 
 
 
