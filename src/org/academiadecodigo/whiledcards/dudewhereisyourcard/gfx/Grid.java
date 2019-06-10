@@ -1,6 +1,7 @@
 package org.academiadecodigo.whiledcards.dudewhereisyourcard.gfx;
 
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
+import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class Grid {
 
@@ -10,7 +11,7 @@ public class Grid {
     private Rectangle rectangle;
     private int cols;
     private int rows;
-    private int cellSize = 20;
+    private int cellSize = 40;
     private static final int PADDING = 10;
 
     /**
@@ -28,6 +29,8 @@ public class Grid {
     public void init() {
         rectangle = new Rectangle(PADDING, PADDING, cols * cellSize, rows * cellSize);
         rectangle.draw();
+        Picture picture = new Picture(10,10, "background700x700.png");
+        picture.draw();
     }
 
 
