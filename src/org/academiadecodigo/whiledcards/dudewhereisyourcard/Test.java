@@ -22,15 +22,14 @@ public class Test {
 
         Audio.runAudio();
 
-        Position pos = new Position(grid, "beer.png");
-        pos.choosePicture();
-        pos.show();
         CodeCadet cadet = new CodeCadet(grid,"codecadet.png",1);
         cadet.move();
 
         Friend friend = new Friend(grid, "friend.png", 1);
         Guard guard = new Guard(grid, "guard.png",2);
         guard.setTarget(friend.getPosition());
+
+        Beer beer = new Beer(grid,"beer.png");
 
         GameObject[] g = {guard, beer, cadet, friend};
 
