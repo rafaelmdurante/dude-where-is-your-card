@@ -3,7 +3,9 @@ package org.academiadecodigo.whiledcards.dudewhereisyourcard.objects.characteres
 import org.academiadecodigo.simplegraphics.keyboard.*;
 import org.academiadecodigo.whiledcards.dudewhereisyourcard.gfx.Direction;
 import org.academiadecodigo.whiledcards.dudewhereisyourcard.gfx.Grid;
+import org.academiadecodigo.whiledcards.dudewhereisyourcard.objects.Beer;
 import org.academiadecodigo.whiledcards.dudewhereisyourcard.objects.Catchable;
+import org.academiadecodigo.whiledcards.dudewhereisyourcard.objects.GameObject;
 
 public class CodeCadet extends Person implements Catchable, KeyboardHandler {
 
@@ -11,6 +13,7 @@ public class CodeCadet extends Person implements Catchable, KeyboardHandler {
     // Person Attributes: speed,  currentDirection,  picture | Methods: move
 
     // CodeCadet Attributes
+
     private boolean drunk;
     private boolean caught;
     private int movementCounter;
@@ -65,6 +68,7 @@ public class CodeCadet extends Person implements Catchable, KeyboardHandler {
         eventDown.setKey(KeyboardEvent.KEY_DOWN);
         eventDown.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
         keyboard.addEventListener(eventDown);
+
     }
 
     @Override
@@ -75,14 +79,17 @@ public class CodeCadet extends Person implements Catchable, KeyboardHandler {
 
         if (keyboardEvent.getKey() == KeyboardEvent.KEY_RIGHT) {
             super.walk(Direction.RIGHT,super.getSpeed());
+
         }
 
         if (keyboardEvent.getKey() == KeyboardEvent.KEY_UP) {
             super.walk(Direction.UP,super.getSpeed());
+
         }
 
         if (keyboardEvent.getKey() == KeyboardEvent.KEY_DOWN) {
             super.walk(Direction.DOWN,super.getSpeed());
+
         }
 
     }
@@ -103,5 +110,4 @@ public class CodeCadet extends Person implements Catchable, KeyboardHandler {
     public void setCaught() {
         caught = true;
     }
-
 }

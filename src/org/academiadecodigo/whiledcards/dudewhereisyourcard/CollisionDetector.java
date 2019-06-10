@@ -1,27 +1,30 @@
 package org.academiadecodigo.whiledcards.dudewhereisyourcard;
 
+import org.academiadecodigo.whiledcards.dudewhereisyourcard.objects.Beer;
 import org.academiadecodigo.whiledcards.dudewhereisyourcard.objects.GameObject;
 import org.academiadecodigo.whiledcards.dudewhereisyourcard.gfx.Position;
+import org.academiadecodigo.whiledcards.dudewhereisyourcard.objects.characteres.CodeCadet;
+import org.academiadecodigo.whiledcards.dudewhereisyourcard.objects.characteres.Friend;
+import org.academiadecodigo.whiledcards.dudewhereisyourcard.objects.characteres.Guard;
 
 public class CollisionDetector {
     /*
     private GameObject[] gameObjects;
 
     public CollisionDetector(GameObject[] gameObjects) {
-        this.gameObjects = objects;
+        this.gameObjects = gameObjects;
     }
 
-    public boolean isUnSafe(Position pos) {
+    public void isUnSafe() {
 
         for (GameObject o : gameObjects) {
 
-            if (o.getPosition()!= pos && o.getPosition().equals(pos)) {
-                return true;
+            if (o instanceof CodeCadet) {
+                checkCadet(o);
             }
 
         }
 
-        return false;
 
     }
 
@@ -31,19 +34,28 @@ public class CollisionDetector {
      * @param
      */
     /*
-    public void check(GameObject gameObject) {
-
+    public void checkCadet(GameObject gameObject) {
         for (GameObject ig : gameObjects) {
-
             // No point in checking collisions with self
-            if (ig == gameObject) {
+            if (ig instanceof Friend || ig instanceof CodeCadet) {
                 continue;
             }
 
-            if (ig.getPosition().equals(gameObject.getPosition())) {
-                ig.collide();
-                gameObject.collide();
+
+
+            //Checks beer
+            if (ig instanceof Beer) {
+                if(ig.getPosition().getRow() == gameObject.getPosition().getRow() &&
+                ig.getPosition().getCol() == gameObject.getPosition().getCol()) {
+                    System.out.println("MORE DRUNK");
+                    ((Beer) ig).setCaught();
+                    CodeCadet cadet = (CodeCadet) gameObject;
+                    cadet.setDrunk(true);
+                }
             }
+
+            //Checks card
+            
         }
 
     }
