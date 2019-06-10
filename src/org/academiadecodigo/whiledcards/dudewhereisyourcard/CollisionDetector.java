@@ -4,7 +4,7 @@ import org.academiadecodigo.whiledcards.dudewhereisyourcard.objects.GameObject;
 import org.academiadecodigo.whiledcards.dudewhereisyourcard.gfx.Position;
 
 public class CollisionDetector {
-
+    /*
     private GameObject[] gameObjects;
 
     public CollisionDetector(GameObject[] gameObjects) {
@@ -30,6 +30,7 @@ public class CollisionDetector {
      * Requires iterating the array once
      * @param
      */
+    /*
     public void check(GameObject gameObject) {
 
         for (GameObject ig : gameObjects) {
@@ -46,4 +47,5 @@ public class CollisionDetector {
         }
 
     }
+    */
 }
