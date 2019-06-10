@@ -24,7 +24,7 @@ public abstract class Person extends GameObjects {
 
     public void walk(Direction direction, int speed) {
         for (int i = 0; i < speed; i++) {
-            getPosition().moveInDirection(NewDirection, 1);
+            getPosition().moveInDirection(direction, 1);
         }
     }
 

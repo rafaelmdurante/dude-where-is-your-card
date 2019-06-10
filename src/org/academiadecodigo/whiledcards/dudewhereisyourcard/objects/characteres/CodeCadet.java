@@ -101,7 +101,7 @@ public class CodeCadet extends Person implements Catchable, KeyboardHandler {
 
     @Override
     public void setCaught() {
-        caught = true:
+        caught = true;
     }
 
 }
