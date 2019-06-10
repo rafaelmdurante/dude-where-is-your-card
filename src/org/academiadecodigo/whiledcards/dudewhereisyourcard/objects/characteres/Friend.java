@@ -10,7 +10,7 @@ public class Friend extends Person implements Catchable, DirectionRandomizable {
 
     private boolean caught;
     private Direction currentDirection;
-    private int directionChangeLevel = 6;
+    private int directionChangeLevel = 8;
 
 
     public Friend(Grid grid, String picName, int speed) {
@@ -28,13 +28,58 @@ public class Friend extends Person implements Catchable, DirectionRandomizable {
             newDirection = Direction.values()[(int) (Math.random() * Direction.values().length)];
         }
 
+        currentDirection = newDirection;
+
         return newDirection;
 
     }
 
+    public boolean isHittingWall() {
+
+        switch (currentDirection) {
+            case LEFT:
+                if (getPosition().getCol() == 0) {
+                    return true;
+                }
+                break;
+            case RIGHT:
+                if (getPosition().getCol() == getGrid().getCols() - 1) {
+                    return true;
+                }
+                break;
+            case UP:
+                if (getPosition().getRow() == 0) {
+                    return true;
+                }
+                break;
+            case DOWN:
+                if (getPosition().getRow() == getGrid().getRows() - 1) {
+                    return true;
+                }
+                break;
+        }
+        return false;
+    }
+
+    @Override
+    public void walk(Direction direction, int speed) {
+
+        Direction newDirection = direction;
+
+        if (isHittingWall()) {
+            newDirection = direction.oppositeDirection();
+        }
+
+        currentDirection = newDirection;
+
+        for (int i = 0; i < speed; i++) {
+            getPosition().moveInDirection(currentDirection, 1);
+        }
+    }
+
     @Override
     public void move() {
-        super.walk(chooseDirection(), getSpeed());
+        walk(chooseDirection(), getSpeed());
     }
 
     @Override

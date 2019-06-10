@@ -21,5 +21,8 @@ public abstract class GameObjects {
         position = new Position(grid, picName);
     }
 
+    public Grid getGrid() {
+        return grid;
+    }
 
 }
