@@ -8,6 +8,7 @@ import org.academiadecodigo.whiledcards.dudewhereisyourcard.gfx.Position;
 public class Guard extends Person implements DirectionRandomizable {
 
     private Position target;
+    private Direction currentDirection;
 
     public void setTarget(Position target) {
         this.target = target;
@@ -17,9 +18,52 @@ public class Guard extends Person implements DirectionRandomizable {
         super(grid, picName, speed);
     }
 
+    private Direction decideDirection() {
+        if (target.getCol() == getPosition().getCol()) {
+            if (getPosition().getRow() > target.getRow()) {
+                currentDirection = Direction.UP;
+                return currentDirection;
+            } else {
+                currentDirection = Direction.DOWN;
+                return currentDirection;
+            }
+        }
+
+        if (target.getRow() == getPosition().getRow()) {
+            if (getPosition().getCol() > target.getCol()) {
+                currentDirection = Direction.LEFT;
+                return currentDirection;
+            } else {
+                currentDirection = Direction.RIGHT;
+                return currentDirection;
+            }
+        }
+
+
+        if (Math.abs(target.getCol() - getPosition().getCol()) > Math.abs(target.getRow() - getPosition().getRow())) {
+
+
+            if (getPosition().getRow() > target.getRow()) {
+                currentDirection = Direction.UP;
+                return currentDirection;
+            } else {
+                currentDirection = Direction.DOWN;
+                return currentDirection;
+            }
+        } else {
+            if (getPosition().getCol() > target.getCol()) {
+                currentDirection = Direction.LEFT;
+                return currentDirection;
+            } else {
+                currentDirection = Direction.RIGHT;
+                return currentDirection;
+            }
+        }
+    }
+
     @Override
     public void move() {
-        
+        walk(decideDirection(), getSpeed());
     }
 
     @Override

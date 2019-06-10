@@ -10,7 +10,7 @@ public class Friend extends Person implements Catchable, DirectionRandomizable {
 
     private boolean caught;
     private Direction currentDirection;
-    private int directionChangeLevel = 8;
+    private int directionChangeLevel = 5;
 
 
     public Friend(Grid grid, String picName, int speed) {

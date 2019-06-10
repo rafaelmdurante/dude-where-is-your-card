@@ -19,10 +19,15 @@ public class Test {
         cadet.move();
 
         Friend friend = new Friend(grid, "green.png", 1);
+        Guard guard = new Guard(grid, "pink.png",2);
+        guard.setTarget(friend.getPosition());
         while(true) {
             Thread.sleep(150);
             friend.move();
+            guard.move();
         }
+
+
 
     }
 }
