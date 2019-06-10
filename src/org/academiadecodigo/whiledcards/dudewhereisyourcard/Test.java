@@ -32,7 +32,7 @@ public class Test {
         Guard guard = new Guard(grid, "guard.png",2);
         guard.setTarget(friend.getPosition());
 
-        GameObject[] g = {guard, beer, cadet};
+        GameObject[] g = {guard, beer, cadet, friend};
 
         CollisionDetector detector = new CollisionDetector(g);
         cadet.move();
