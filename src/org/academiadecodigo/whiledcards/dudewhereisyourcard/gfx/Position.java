@@ -37,7 +37,13 @@ public class Position {
         int rows = grid.rowToY(row);
         picture = new Picture(column, rows, picName);
     }
+    
 
+    /** switch for directions
+     *
+     * @param direction
+     * @param distance
+     */
     public void moveInDirection(Direction direction, int distance) {
 
         switch (direction) {
@@ -61,12 +67,27 @@ public class Position {
         }
     }
 
+
+    /**Moves
+     *
+     * @param distance
+     */
     public void moveUp(int distance) {
-
-        setPosition
-
-
+        setRow(getRow() - distance);
     }
+
+    public void moveDown(int distance) {
+        setRow(getRow() + distance);
+    }
+
+    public void moveLeft(int distance) {
+        setCol(getCol() - distance);
+    }
+
+    public void moveRight(int distance) {
+        setCol(getCol() + distance);
+    }
+
 
 
     public void setCol(int col) {
