@@ -29,8 +29,8 @@ public class Grid {
     public void init() {
         rectangle = new Rectangle(PADDING, PADDING, cols * cellSize, rows * cellSize);
         rectangle.draw();
-        Picture picture = new Picture(10,10, "background700x700.png");
-        picture.draw();
+        //Picture picture = new Picture(10,10, "background700x700.png");
+        //picture.draw();
     }
 
 

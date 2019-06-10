@@ -89,22 +89,24 @@ public class Position {
      * @param distance
      */
     public void moveUp(int distance) {
-        setRow(getRow() - distance);
+        int maxRowsUp = distance < getRow() ? distance : getRow();
+        setRow(getRow() - maxRowsUp);
     }
 
     public void moveDown(int distance) {
-        setRow(getRow() + distance);
+        int maxRowsDown = distance > grid.getRows() - (getRow() + 1) ? grid.getRows() - (getRow() + 1) : distance;
+        setRow(getRow() + maxRowsDown);
     }
 
     public void moveLeft(int distance) {
-        setCol(getCol() - distance);
+        int maxRowsLeft = distance < getCol() ? distance : getCol();
+        setCol(getCol() - maxRowsLeft);
     }
 
     public void moveRight(int distance) {
-        setCol(getCol() + distance);
+        int maxRowsRight = distance > grid.getCols() - (getCol() + 1) ? grid.getCols() - (getCol() + 1) : distance;
+        setCol(getCol() + maxRowsRight);
     }
-
-
 
     public void setCol(int col) {
         this.col = col;
