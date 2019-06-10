@@ -15,6 +15,8 @@ public class Position {
         this.picName = picName;
         col = (int) (Math.random() * grid.getCols());
         row = (int) (Math.random() * grid.getRows());
+        choosePicture();
+        show();
     }
 
      public Position(int col, int row, Grid grid, String picName) {
