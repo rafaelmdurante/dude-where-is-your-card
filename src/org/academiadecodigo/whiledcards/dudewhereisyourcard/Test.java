@@ -3,7 +3,8 @@ package org.academiadecodigo.whiledcards.dudewhereisyourcard;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 import org.academiadecodigo.whiledcards.dudewhereisyourcard.gfx.Grid;
 import org.academiadecodigo.whiledcards.dudewhereisyourcard.gfx.Position;
-import org.academiadecodigo.whiledcards.dudewhereisyourcard.objects.characteres.CodeCadet;
+import org.academiadecodigo.whiledcards.dudewhereisyourcard.objects.characteres.*;
+
 
 public class Test {
     public static void main(String[] args) {
@@ -16,5 +17,10 @@ public class Test {
         pos.show();
         CodeCadet cadet = new CodeCadet(grid,"red.png",1);
         cadet.move();
+
+        Friend friend = new Friend(grid, "green.png", 1);
+        while(true) {
+            friend.move();
+        }
     }
 }

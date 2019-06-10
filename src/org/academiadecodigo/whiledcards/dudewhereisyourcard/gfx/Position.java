@@ -1,6 +1,5 @@
 package org.academiadecodigo.whiledcards.dudewhereisyourcard.gfx;
 
-import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 import org.academiadecodigo.simplegraphics.pictures.*;
 
 public class Position {
@@ -39,9 +38,6 @@ public class Position {
         int rows = grid.rowToY(row);
         picture = new Picture(column, rows, picName);
     }
-
-
-
 
 
     /** switch for directions

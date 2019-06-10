@@ -23,7 +23,7 @@ public class Guard extends Person implements DirectionRandomizable {
     }
 
     @Override
-    public void chooseDirection() {
-
+    public Direction chooseDirection() {
+        return null;
     }
 }
