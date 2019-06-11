@@ -39,7 +39,7 @@ public class Test {
         CollisionDetector detector = new CollisionDetector(g);
 
         while(true) {
-            Thread.sleep(150);
+            Thread.sleep(350);
 
             detector.isUnSafe();
             friend.move();
