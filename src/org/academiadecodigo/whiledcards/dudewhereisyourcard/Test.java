@@ -4,6 +4,7 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 import org.academiadecodigo.whiledcards.dudewhereisyourcard.gfx.Grid;
 import org.academiadecodigo.whiledcards.dudewhereisyourcard.gfx.Position;
 import org.academiadecodigo.whiledcards.dudewhereisyourcard.objects.Beer;
+import org.academiadecodigo.whiledcards.dudewhereisyourcard.objects.Card;
 import org.academiadecodigo.whiledcards.dudewhereisyourcard.objects.GameObject;
 import org.academiadecodigo.whiledcards.dudewhereisyourcard.objects.characteres.*;
 import org.academiadecodigo.whiledcards.dudewhereisyourcard.Audio;
@@ -29,6 +30,8 @@ public class Test {
         guard.setTarget(friend.getPosition());
 
         Beer beer = new Beer(grid,"beer.png");
+
+        // Card card = new Card(grid, "card.png");
 
         GameObject[] g = {guard, beer, cadet, friend};
         //GameObject[] g = {guard, beer, cadet};

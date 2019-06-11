@@ -76,10 +76,16 @@ public class CollisionDetector {
             }
 
             //Checks card
-            if (ig instanceof Card){
+            if (ig instanceof Card) {
+                Card card = (Card) ig;
                 if(ig.getPosition().getRow() == gameObject.getPosition().getRow() &&
-                        ig.getPosition().getCol() == gameObject.getPosition().getCol()) {
+                        ig.getPosition().getCol() == gameObject.getPosition().getCol() && !card.isCaught()) {
                     System.out.println("CARD");
+                    card.capture();
+                    /**
+                     *  NEED TO ADD SCORE LOGIC
+                     */
+
                 }
             }
 

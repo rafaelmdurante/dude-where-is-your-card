@@ -32,8 +32,13 @@ public class Card extends GameObject implements Catchable {
 
     // Methods from Interface
 
+
     @Override
-    public void capture(){}
+    public void capture() {
+        getPosition().hide();
+        getPosition().setNewPosition();
+        getPosition().show();
+    }
 
     @Override
     public boolean isCaught() {
