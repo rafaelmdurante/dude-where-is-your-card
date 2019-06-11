@@ -119,4 +119,9 @@ public class Position {
     public int getCol() {
         return col;
     }
+
+    public void setNewPosition(){
+        col = (int) (Math.random() * grid.getCols());
+        row = (int) (Math.random() * grid.getRows());
+    }
 }

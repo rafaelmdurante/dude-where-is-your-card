@@ -15,8 +15,17 @@ public class Beer extends GameObject implements Catchable {
         super(grid, picName);
     }
 
+    public void revive(){
+        setCaught();
+        getPosition().show();
+    }
+
     @Override
-    public void capture(){}
+    public void capture(){
+        setCaught();
+        getPosition().hide();
+        getPosition().setNewPosition();
+    }
 
     @Override
     public boolean isCaught() {
