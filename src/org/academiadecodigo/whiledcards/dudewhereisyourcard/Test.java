@@ -33,14 +33,13 @@ public class Test {
 
         GameObject[] g = {guard, beer, cadet, friend};
         //GameObject[] g = {guard, beer, cadet};
-
-        //CollisionDetector detector = new CollisionDetector(g);
         cadet.move();
+        CollisionDetector detector = new CollisionDetector(g);
 
         while(true) {
             Thread.sleep(150);
 
-            //detector.isUnSafe();
+            detector.isUnSafe();
             friend.move();
             guard.move();
         }
