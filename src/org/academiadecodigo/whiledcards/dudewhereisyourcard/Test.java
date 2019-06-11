@@ -17,7 +17,7 @@ public class Test {
 
         Grid grid = new Grid(25,15);
         grid.init();
-        Picture background = new Picture(10, 10, "background1000x600.png");
+        Picture background = new Picture(10, 10, "background.png");
         background.draw();
 
         Audio.runAudio();
