@@ -31,9 +31,9 @@ public class Test {
 
         Beer beer = new Beer(grid,"beer.png");
 
-        // Card card = new Card(grid, "card.png");
+        Card card = new Card(grid, "card.png");
 
-        GameObject[] g = {guard, beer, cadet, friend};
+        GameObject[] g = {guard, card, beer, cadet, friend};
         //GameObject[] g = {guard, beer, cadet};
         cadet.move();
         CollisionDetector detector = new CollisionDetector(g);

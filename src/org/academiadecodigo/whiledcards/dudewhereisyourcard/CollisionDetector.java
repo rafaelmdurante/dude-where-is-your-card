@@ -24,9 +24,9 @@ public class CollisionDetector {
                 cadetPosition = o.getPosition();
                 checkCadet(o);
 
-            }else if(o instanceof Guard) {
+            } else if (o instanceof Guard) {
                 checkGuard(o);
-            }else{
+            } else {
                 continue;
             }
 
@@ -38,16 +38,17 @@ public class CollisionDetector {
     /**
      * Checks for collisions with specific gameObject
      * Requires iterating the array once
+     *
      * @param
      */
 
     private void checkGuard(GameObject guard) {
-        for (GameObject ig: gameObjects) {
+        for (GameObject ig : gameObjects) {
 
-            if (ig instanceof Friend){
+            if (ig instanceof Friend) {
                 System.out.println("friend");
-                if(ig.getPosition().getRow() == guard.getPosition().getRow() &&
-                        ig.getPosition().getCol() == guard.getPosition().getCol()){
+                if (ig.getPosition().getRow() == guard.getPosition().getRow() &&
+                        ig.getPosition().getCol() == guard.getPosition().getCol()) {
                     ((Guard) guard).setTarget(cadetPosition);
                     System.out.println("caught friend");
                 }
@@ -63,12 +64,11 @@ public class CollisionDetector {
             }
 
 
-
             //Checks beer
             if (ig instanceof Beer) {
                 Beer beer = (Beer) ig;
-                if(ig.getPosition().getRow() == gameObject.getPosition().getRow() &&
-                ig.getPosition().getCol() == gameObject.getPosition().getCol() && !beer.isCaught()) {
+                if (ig.getPosition().getRow() == gameObject.getPosition().getRow() &&
+                        ig.getPosition().getCol() == gameObject.getPosition().getCol() && !beer.isCaught()) {
                     System.out.println("DRUNK");
                     beer.capture();
                     ((CodeCadet) gameObject).setDrunk(true); //Cast to CodeCadet
@@ -78,7 +78,7 @@ public class CollisionDetector {
             //Checks card
             if (ig instanceof Card) {
                 Card card = (Card) ig;
-                if(ig.getPosition().getRow() == gameObject.getPosition().getRow() &&
+                if (ig.getPosition().getRow() == gameObject.getPosition().getRow() &&
                         ig.getPosition().getCol() == gameObject.getPosition().getCol() && !card.isCaught()) {
                     System.out.println("CARD");
                     card.capture();
@@ -90,8 +90,8 @@ public class CollisionDetector {
             }
 
             //Checks guard
-            if(ig instanceof Guard){
-                if(ig.getPosition().getRow() == gameObject.getPosition().getRow() &&
+            if (ig instanceof Guard) {
+                if (ig.getPosition().getRow() == gameObject.getPosition().getRow() &&
                         ig.getPosition().getCol() == gameObject.getPosition().getCol()) {
                     System.out.println("GUARD");
                 }
@@ -99,8 +99,6 @@ public class CollisionDetector {
         }
 
     }
-
-
 
 
 }

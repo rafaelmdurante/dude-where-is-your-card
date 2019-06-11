@@ -21,10 +21,6 @@ public class Card extends GameObject implements Catchable {
     }
 
 
-    // Methods from SuperClass
-    public Position getPosition() {
-        return position;
-    }
 
     public void setGrid(Grid grid) {
         this.grid = grid;
@@ -35,6 +31,7 @@ public class Card extends GameObject implements Catchable {
 
     @Override
     public void capture() {
+        setCaught();
         getPosition().hide();
         getPosition().setNewPosition();
         getPosition().show();
@@ -47,7 +44,7 @@ public class Card extends GameObject implements Catchable {
 
     @Override
     public void setCaught() {
-        caught = true;
+        caught = !caught;
     }
 
 
