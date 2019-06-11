@@ -23,7 +23,6 @@ public class Test {
         Audio.runAudio();
 
         CodeCadet cadet = new CodeCadet(grid,"codecadet.png",1);
-        cadet.move();
 
         Friend friend = new Friend(grid, "friend.png", 1);
         Guard guard = new Guard(grid, "guard.png",2);
