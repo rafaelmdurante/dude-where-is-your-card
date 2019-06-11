@@ -77,6 +77,9 @@ public class Friend extends Person implements Catchable, DirectionRandomizable {
     }
 
     @Override
+    public void capture(){}
+
+    @Override
     public void move() {
         walk(chooseDirection(), getSpeed());
     }

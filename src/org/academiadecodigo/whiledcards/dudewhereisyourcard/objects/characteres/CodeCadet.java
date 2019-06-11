@@ -43,6 +43,8 @@ public class CodeCadet extends Person implements Catchable, KeyboardHandler {
         movementCounter = 0;
     }
 
+    @Override
+    public void capture(){}
 
     @Override
     public void move() {

@@ -31,10 +31,16 @@ public class Card extends GameObject implements Catchable {
     }
 
     // Methods from Interface
+
+    @Override
+    public void capture(){}
+
+    @Override
     public boolean isCaught() {
         return caught;
     }
 
+    @Override
     public void setCaught() {
         caught = true;
     }

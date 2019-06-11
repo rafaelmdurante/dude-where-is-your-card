@@ -15,11 +15,14 @@ public class Beer extends GameObject implements Catchable {
         super(grid, picName);
     }
 
+    @Override
+    public void capture(){}
 
+    @Override
     public boolean isCaught() {
         return caught;
     }
-
+    @Override
     public void setCaught() {
 
         caught = !caught;

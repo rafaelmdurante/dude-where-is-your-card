@@ -66,10 +66,11 @@ public class CollisionDetector {
 
             //Checks beer
             if (ig instanceof Beer) {
+                Beer beer = (Beer) ig;
                 if(ig.getPosition().getRow() == gameObject.getPosition().getRow() &&
-                ig.getPosition().getCol() == gameObject.getPosition().getCol()) {
+                ig.getPosition().getCol() == gameObject.getPosition().getCol() && !beer.isCaught()) {
                     System.out.println("DRUNK");
-                    ((Beer) ig).setCaught(); // Cast to Beer
+                    beer.capture();
                     ((CodeCadet) gameObject).setDrunk(true); //Cast to CodeCadet
                 }
             }
