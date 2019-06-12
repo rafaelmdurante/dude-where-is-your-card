@@ -34,7 +34,9 @@ public class Card extends GameObject implements Catchable {
         setCaught();
         getPosition().hide();
         getPosition().setNewPosition();
+        getPosition().choosePicture();
         getPosition().show();
+        setCaught();
     }
 
     @Override

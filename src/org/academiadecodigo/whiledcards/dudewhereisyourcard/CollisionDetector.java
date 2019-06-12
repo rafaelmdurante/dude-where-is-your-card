@@ -71,7 +71,7 @@ public class CollisionDetector {
                         ig.getPosition().getCol() == gameObject.getPosition().getCol() && !beer.isCaught()) {
                     System.out.println("DRUNK");
                     beer.capture();
-                    ((CodeCadet) gameObject).setDrunk(true); //Cast to CodeCadet
+                    ((CodeCadet) gameObject).setDrunk(); //Cast to CodeCadet
                 }
             }
 
