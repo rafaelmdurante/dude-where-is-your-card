@@ -9,6 +9,7 @@ public class Guard extends Person implements DirectionRandomizable {
 
     private Position target;
     private Direction currentDirection;
+    private boolean caughtCadet = false;
 
     public void setTarget(Position target) {
         this.target = target;
@@ -16,6 +17,14 @@ public class Guard extends Person implements DirectionRandomizable {
 
     public Guard(Grid grid, String picName, int speed) {
         super(grid, picName, speed);
+    }
+
+    public void setCaughtCadet(boolean value) {
+        caughtCadet = value;
+    }
+
+    public boolean isCaughtCadet() {
+        return caughtCadet;
     }
 
     private Direction decideDirection() {

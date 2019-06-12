@@ -23,6 +23,8 @@ public class Position {
         this.grid = grid;
         this.col = col;
         this.row = row;
+        choosePicture();
+        show();
     }
 
     public void show() {

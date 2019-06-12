@@ -3,9 +3,7 @@ package org.academiadecodigo.whiledcards.dudewhereisyourcard;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 import org.academiadecodigo.whiledcards.dudewhereisyourcard.gfx.Grid;
 import org.academiadecodigo.whiledcards.dudewhereisyourcard.gfx.Position;
-import org.academiadecodigo.whiledcards.dudewhereisyourcard.objects.Beer;
-import org.academiadecodigo.whiledcards.dudewhereisyourcard.objects.Card;
-import org.academiadecodigo.whiledcards.dudewhereisyourcard.objects.GameObject;
+import org.academiadecodigo.whiledcards.dudewhereisyourcard.objects.*;
 import org.academiadecodigo.whiledcards.dudewhereisyourcard.objects.characteres.*;
 import org.academiadecodigo.whiledcards.dudewhereisyourcard.Audio;
 
@@ -26,7 +24,7 @@ public class Test {
         CodeCadet cadet = new CodeCadet(grid,"codecadet.png",1);
 
         Friend friend = new Friend(grid, "friend.png", 1);
-        Guard guard = new Guard(grid, "guard.png",2);
+        Guard guard = new Guard(grid, "guard.png",1);
         guard.setTarget(friend.getPosition());
 
         Beer beer = new Beer(grid,"beer.png");
@@ -38,13 +36,17 @@ public class Test {
         cadet.move();
         CollisionDetector detector = new CollisionDetector(g);
 
-        while(true) {
-            Thread.sleep(350);
-
+        while(!guard.isCaughtCadet()) {
+            Thread.sleep(300);
             detector.isUnSafe();
             friend.move();
             guard.move();
+            cadet.capture();
         }
+
+        System.out.println("Game Over!");
+        GameOver gameOver = new GameOver(grid, "gameover.png");
+
 
     }
 

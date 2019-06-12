@@ -94,11 +94,17 @@ public class CollisionDetector {
                 if (ig.getPosition().getRow() == gameObject.getPosition().getRow() &&
                         ig.getPosition().getCol() == gameObject.getPosition().getCol()) {
                     System.out.println("GUARD");
+                    // Set caught cadet - important to check if game ends
+                    ((Guard) ig).setCaughtCadet(true);
+                    // hide all objects from the array of objects
+                    for (GameObject go : gameObjects) {
+                        go.getPosition().hide();
+                    }
                 }
             }
+
         }
 
     }
-
 
 }

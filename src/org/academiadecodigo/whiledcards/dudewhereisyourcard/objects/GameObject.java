@@ -21,6 +21,11 @@ public abstract class GameObject {
         position = new Position(grid, picName);
     }
 
+    public GameObject(int col, int row, Grid grid, String picName) {
+        this.grid = grid;
+        position = new Position(col, row, grid, picName);
+    }
+
     public Grid getGrid() {
         return grid;
     }
