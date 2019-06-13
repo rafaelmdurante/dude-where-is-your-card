@@ -2,13 +2,8 @@ package org.academiadecodigo.whiledcards.dudewhereisyourcard;
 
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 import org.academiadecodigo.whiledcards.dudewhereisyourcard.gfx.Grid;
-import org.academiadecodigo.whiledcards.dudewhereisyourcard.gfx.Position;
 import org.academiadecodigo.whiledcards.dudewhereisyourcard.objects.*;
-import org.academiadecodigo.whiledcards.dudewhereisyourcard.objects.characteres.*;
-import org.academiadecodigo.whiledcards.dudewhereisyourcard.Audio;
-
-import javax.sound.sampled.*;
-import java.io.File;
+import org.academiadecodigo.whiledcards.dudewhereisyourcard.objects.characters.*;
 
 public class Test {
 
@@ -24,6 +19,7 @@ public class Test {
         CodeCadet cadet = new CodeCadet(grid,"codecadet.png",1);
 
         Friend friend = new Friend(grid, "friend.png", 1);
+
         Guard guard = new Guard(grid, "guard.png",1);
         guard.setTarget(friend.getPosition());
 
@@ -34,7 +30,7 @@ public class Test {
         GameObject[] g = {guard, card, beer, cadet, friend};
         //GameObject[] g = {guard, beer, cadet};
         cadet.move();
-        CollisionDetector detector = new CollisionDetector(g);
+        MoveManager detector = new MoveManager(g);
 
         while(!guard.isCaughtCadet()) {
             Thread.sleep(300);
