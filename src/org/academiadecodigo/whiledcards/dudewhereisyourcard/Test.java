@@ -19,6 +19,7 @@ public class Test {
         CodeCadet cadet = new CodeCadet(grid,"codecadet.png",1);
 
         Friend friend = new Friend(grid, "friend.png", 1);
+
         Guard guard = new Guard(grid, "guard.png",1);
         guard.setTarget(friend.getPosition());
 
