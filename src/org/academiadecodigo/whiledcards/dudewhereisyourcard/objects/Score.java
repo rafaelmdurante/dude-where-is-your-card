@@ -20,10 +20,10 @@ public class Score {
     public Score(){
 
 
-        scoreText = new Text(60, 20, printScore());
-        scoreText.setColor(Color.BLACK);
+        scoreText = new Text(650, 15, printScore());
+        scoreText.setColor(Color.DARK_GRAY);
         scoreText.draw();
-        scoreText.grow(50, 10);
+        scoreText.grow(40, 15);
         scoreText.setText(printScore());
 
 
@@ -46,11 +46,11 @@ public class Score {
     public String getDrunkMode(){
 
         if(cadetDrunk){
-            return " I'M SO WASTED! WOOHOOO ";
+            return " LITROSA!!!";
 
         } else {
 
-            return " OFF ";
+            return " THIRSTY ";
         }
 
 

@@ -12,7 +12,7 @@ public class Test {
 
         Grid grid = new Grid(25,15);
         grid.init();
-        Picture background = new Picture(10, 10, "background.png");
+        Picture background = new Picture(10, 40, "background.png");
         background.draw();
 
         Audio.runAudio();
@@ -40,8 +40,8 @@ public class Test {
             friend.move();
             guard.move();
             cadet.capture();
-             score.update(2,3,true);
-             score.printScore();
+            score.update( beer.getScore(),card.getScore(),cadet.isDrunk());
+            score.printScore();
         }
 
         System.out.println("Game Over!");

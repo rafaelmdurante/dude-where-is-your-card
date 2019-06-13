@@ -58,5 +58,7 @@ public class Card extends GameObject implements Catchable {
         caught = !caught;
     }
 
-
+    public int getScore() {
+        return score;
+    }
 }

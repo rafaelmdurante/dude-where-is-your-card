@@ -6,6 +6,7 @@ public class Beer extends GameObject /*implements Catchable*/ {
 
     private boolean caught;
     private boolean full;
+    private int score;
 
     /**
      * constructor
@@ -17,13 +18,13 @@ public class Beer extends GameObject /*implements Catchable*/ {
         getPosition().hide();
     }
 
-
     public void refill(){
         getPosition().choosePicture();
         getPosition().show();
     }
     //@Override
-    public void capture(){
+    public void capture() {
+        score++;
         setCaught(true);
         getPosition().hide();
         getPosition().setNewPosition();
@@ -45,5 +46,9 @@ public class Beer extends GameObject /*implements Catchable*/ {
 
     public void setFull(boolean value){
         full = value;
+    }
+
+    public int getScore() {
+        return score;
     }
 }
