@@ -8,11 +8,11 @@ import org.academiadecodigo.whiledcards.dudewhereisyourcard.objects.characteres.
 import org.academiadecodigo.whiledcards.dudewhereisyourcard.objects.characteres.Friend;
 import org.academiadecodigo.whiledcards.dudewhereisyourcard.objects.characteres.Guard;
 
-public class CollisionDetector {
+public class MoveManager {
     private GameObject[] gameObjects;
     private Position cadetPosition;
 
-    public CollisionDetector(GameObject[] gameObjects) {
+    public MoveManager(GameObject[] gameObjects) {
         this.gameObjects = gameObjects;
     }
 
