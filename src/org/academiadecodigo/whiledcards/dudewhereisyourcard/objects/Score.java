@@ -1,5 +1,7 @@
 package org.academiadecodigo.whiledcards.dudewhereisyourcard.objects;
 
+import org.academiadecodigo.simplegraphics.graphics.Color;
+import org.academiadecodigo.simplegraphics.graphics.Text;
 import org.academiadecodigo.whiledcards.dudewhereisyourcard.gfx.Grid;
 import org.academiadecodigo.whiledcards.dudewhereisyourcard.gfx.Position;
 import org.academiadecodigo.whiledcards.dudewhereisyourcard.objects.characters.CodeCadet;
@@ -8,14 +10,22 @@ public class Score {
 
     private String msg;
     private Grid grid;
-    private int beer;
-    private int card;
-    private boolean cadetDrunk;
+    private int beer = 0;
+    private int card = 0;
+    private boolean cadetDrunk = false;
+
+    Text scoreText;
 
 
-    public Score(Grid grid,String msg){
-        this.grid = grid;
-        this.msg = msg;
+    public Score(){
+
+
+        scoreText = new Text(60, 20, printScore());
+        scoreText.setColor(Color.BLACK);
+        scoreText.draw();
+        scoreText.grow(50, 10);
+        scoreText.setText(printScore());
+
 
     }
 
@@ -23,7 +33,7 @@ public class Score {
        setBeer(beer);
        setCadetDrunk(cadetDrunk);
        setCard(card);
-
+       scoreText.setText(printScore());
     }
 
     public String printScore(){
@@ -36,7 +46,7 @@ public class Score {
     public String getDrunkMode(){
 
         if(cadetDrunk){
-            return " IM SO WASTED! WOOHOOO ";
+            return " I'M SO WASTED! WOOHOOO ";
 
         } else {
 

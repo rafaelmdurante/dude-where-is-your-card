@@ -4,6 +4,7 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 import org.academiadecodigo.whiledcards.dudewhereisyourcard.gfx.Grid;
 import org.academiadecodigo.whiledcards.dudewhereisyourcard.objects.*;
 import org.academiadecodigo.whiledcards.dudewhereisyourcard.objects.characters.*;
+import org.w3c.dom.Text;
 
 public class Test {
 
@@ -15,6 +16,7 @@ public class Test {
         background.draw();
 
         Audio.runAudio();
+        Score score = new Score();
 
         CodeCadet cadet = new CodeCadet(grid,"codecadet.png",1);
 
@@ -38,6 +40,8 @@ public class Test {
             friend.move();
             guard.move();
             cadet.capture();
+             score.update(2,3,true);
+             score.printScore();
         }
 
         System.out.println("Game Over!");
