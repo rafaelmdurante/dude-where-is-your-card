@@ -4,11 +4,8 @@ import javax.sound.sampled.*;
 
 import org.academiadecodigo.whiledcards.dudewhereisyourcard.gfx.Grid;
 import org.academiadecodigo.whiledcards.dudewhereisyourcard.gfx.Position;
-import org.academiadecodigo.whiledcards.dudewhereisyourcard.objects.characteres.*;
+import org.academiadecodigo.whiledcards.dudewhereisyourcard.objects.characters.*;
 
-import org.academiadecodigo.whiledcards.dudewhereisyourcard.Audio;
-
-import java.io.File;
 import java.io.IOException;
 
 public class TestSound {

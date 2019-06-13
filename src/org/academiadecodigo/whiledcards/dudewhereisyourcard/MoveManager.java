@@ -4,9 +4,9 @@ import org.academiadecodigo.whiledcards.dudewhereisyourcard.objects.Beer;
 import org.academiadecodigo.whiledcards.dudewhereisyourcard.objects.Card;
 import org.academiadecodigo.whiledcards.dudewhereisyourcard.objects.GameObject;
 import org.academiadecodigo.whiledcards.dudewhereisyourcard.gfx.Position;
-import org.academiadecodigo.whiledcards.dudewhereisyourcard.objects.characteres.CodeCadet;
-import org.academiadecodigo.whiledcards.dudewhereisyourcard.objects.characteres.Friend;
-import org.academiadecodigo.whiledcards.dudewhereisyourcard.objects.characteres.Guard;
+import org.academiadecodigo.whiledcards.dudewhereisyourcard.objects.characters.CodeCadet;
+import org.academiadecodigo.whiledcards.dudewhereisyourcard.objects.characters.Friend;
+import org.academiadecodigo.whiledcards.dudewhereisyourcard.objects.characters.Guard;
 
 public class MoveManager {
     private GameObject[] gameObjects;
