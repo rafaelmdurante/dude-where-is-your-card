@@ -1,4 +1,4 @@
-package org.academiadecodigo.whiledcards.dudewhereisyourcard.objects.characteres;
+package org.academiadecodigo.whiledcards.dudewhereisyourcard.objects.characters;
 
 import org.academiadecodigo.whiledcards.dudewhereisyourcard.gfx.Direction;
 import org.academiadecodigo.whiledcards.dudewhereisyourcard.gfx.DirectionRandomizable;

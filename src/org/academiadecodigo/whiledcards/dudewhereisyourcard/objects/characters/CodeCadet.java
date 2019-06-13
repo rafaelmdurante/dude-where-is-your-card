@@ -1,11 +1,9 @@
-package org.academiadecodigo.whiledcards.dudewhereisyourcard.objects.characteres;
+package org.academiadecodigo.whiledcards.dudewhereisyourcard.objects.characters;
 
 import org.academiadecodigo.simplegraphics.keyboard.*;
 import org.academiadecodigo.whiledcards.dudewhereisyourcard.gfx.Direction;
 import org.academiadecodigo.whiledcards.dudewhereisyourcard.gfx.Grid;
-import org.academiadecodigo.whiledcards.dudewhereisyourcard.objects.Beer;
 import org.academiadecodigo.whiledcards.dudewhereisyourcard.objects.Catchable;
-import org.academiadecodigo.whiledcards.dudewhereisyourcard.objects.GameObject;
 
 import java.util.Arrays;
 import java.util.Collections;
