@@ -79,4 +79,11 @@ public class Guard extends Person implements DirectionRandomizable {
     public Direction chooseDirection() {
         return null;
     }
+
+    /**
+     * Used to increase speed one by one for the Guard
+     */
+    public void increaseSpeed() {
+        setSpeed(getSpeed() + 1);
+    }
 }

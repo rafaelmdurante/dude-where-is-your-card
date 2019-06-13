@@ -33,4 +33,16 @@ public abstract class Person extends GameObject {
         return speed;
     }
 
+    /**
+     * Used to set Guard speed after getting N cards
+     * Especially to return to the original value
+     * @param speed
+     * @return
+     */
+    public void setSpeed(int speed) {
+        this.speed = speed;
+    }
+
+
+
 }
