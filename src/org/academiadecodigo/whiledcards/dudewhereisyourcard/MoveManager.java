@@ -11,29 +11,38 @@ import org.academiadecodigo.whiledcards.dudewhereisyourcard.objects.characters.G
 public class MoveManager {
     private GameObject[] gameObjects;
     private Position cadetPosition;
+    private int cadetMoves;
+    private Position friendPosition;
 
     public MoveManager(GameObject[] gameObjects) {
         this.gameObjects = gameObjects;
     }
 
-    public void isUnSafe() {
+    public void manage() {
 
         for (GameObject o : gameObjects) {
 
             if (o instanceof CodeCadet) {
                 cadetPosition = o.getPosition();
+                cadetMoves=cadetMoves + ((CodeCadet) o).sendmove();
                 checkCadet(o);
 
             } else if (o instanceof Guard) {
                 checkGuard(o);
-            } else {
-                continue;
+            }else if(o instanceof Beer){
+                if(cadetMoves==100){
+                    ((Beer) o).refill();
+                    ((Beer) o).setCaught(false);
+                    cadetMoves=0;
+                }
+            }else if(o instanceof Friend){
+                friendPosition = o.getPosition();
             }
-
         }
 
 
     }
+
 
     /**
      * Checks for collisions with specific gameObject
