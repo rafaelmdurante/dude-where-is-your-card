@@ -34,7 +34,7 @@ public class Test {
 
         while(!guard.isCaughtCadet()) {
             Thread.sleep(300);
-            detector.isUnSafe();
+            detector.manage();
             friend.move();
             guard.move();
             cadet.capture();

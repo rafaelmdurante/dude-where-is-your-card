@@ -2,9 +2,10 @@ package org.academiadecodigo.whiledcards.dudewhereisyourcard.objects;
 
 import org.academiadecodigo.whiledcards.dudewhereisyourcard.gfx.Grid;
 
-public class Beer extends GameObject implements Catchable {
+public class Beer extends GameObject /*implements Catchable*/ {
 
     private boolean caught;
+    private boolean full;
 
     /**
      * constructor
@@ -13,22 +14,36 @@ public class Beer extends GameObject implements Catchable {
      */
     public Beer(Grid grid, String picName) {
         super(grid, picName);
+        getPosition().hide();
     }
-    
-    @Override
+
+
+    public void refill(){
+        getPosition().choosePicture();
+        getPosition().show();
+    }
+    //@Override
     public void capture(){
-        setCaught();
+        setCaught(true);
         getPosition().hide();
         getPosition().setNewPosition();
     }
 
-    @Override
+    //@Override
     public boolean isCaught() {
         return caught;
     }
-    @Override
-    public void setCaught() {
+    //@Override
+    public void setCaught(boolean value) {
 
-        caught = !caught;
+        caught = value;
+    }
+
+    public boolean getFull(){
+        return full;
+    }
+
+    public void setFull(boolean value){
+        full = value;
     }
 }

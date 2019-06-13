@@ -10,11 +10,13 @@ public class Friend extends Person implements Catchable, DirectionRandomizable {
     private boolean caught;
     private Direction currentDirection;
     private int directionChangeLevel = 5;
+    private boolean present;
 
 
     public Friend(Grid grid, String picName, int speed) {
         super(grid, picName, speed);
         currentDirection = Direction.values()[(int) (Math.random() * Direction.values().length)];
+        getPosition().hide();
     }
 
     @Override
@@ -31,6 +33,10 @@ public class Friend extends Person implements Catchable, DirectionRandomizable {
 
         return newDirection;
 
+    }
+
+    public boolean getIspresent(){
+        return present;
     }
 
     public boolean isHittingWall() {
