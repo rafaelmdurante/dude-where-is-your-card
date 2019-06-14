@@ -16,7 +16,7 @@ public class TestSound {
         grid.init();
 
         // Audio
-        Audio.runAudio();
+        new Audio().runAudio();
 
         // Characters
 

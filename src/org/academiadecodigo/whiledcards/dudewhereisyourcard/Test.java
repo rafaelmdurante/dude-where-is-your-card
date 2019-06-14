@@ -15,7 +15,7 @@ public class Test {
         Picture background = new Picture(10, 40, "background.png");
         background.draw();
 
-        Audio.runAudio();
+        new Audio().runAudio();
         Score score = new Score();
 
         CodeCadet cadet = new CodeCadet(grid,"codecadet.png",1);
