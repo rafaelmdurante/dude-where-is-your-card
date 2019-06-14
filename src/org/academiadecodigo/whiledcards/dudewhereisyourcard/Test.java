@@ -29,7 +29,7 @@ public class Test {
 
         Card card = new Card(grid, "card.png");
 
-        GameObject[] g = {guard, card, beer, cadet, friend};
+        GameObject[] g = {cadet, card, beer, friend, guard};
         //GameObject[] g = {guard, beer, cadet};
         cadet.move();
         MoveManager detector = new MoveManager(g);

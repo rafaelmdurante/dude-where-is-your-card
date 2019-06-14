@@ -19,15 +19,17 @@ public class Beer extends GameObject /*implements Catchable*/ {
     }
 
     public void refill(){
+        getPosition().setNewPosition();
         getPosition().choosePicture();
         getPosition().show();
     }
     //@Override
     public void capture() {
+        System.out.println("BEER HERE");
         score++;
         setCaught(true);
         getPosition().hide();
-        getPosition().setNewPosition();
+
     }
 
     //@Override

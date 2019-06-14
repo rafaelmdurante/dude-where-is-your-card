@@ -17,6 +17,7 @@ public class Friend extends Person implements Catchable, DirectionRandomizable {
         super(grid, picName, speed);
         currentDirection = Direction.values()[(int) (Math.random() * Direction.values().length)];
         getPosition().hide();
+        caught = true;
     }
 
     @Override
@@ -33,6 +34,11 @@ public class Friend extends Person implements Catchable, DirectionRandomizable {
 
         return newDirection;
 
+    }
+
+    public void show(){
+        getPosition().choosePicture();
+        getPosition().show();
     }
 
     public boolean getIspresent(){
@@ -83,7 +89,10 @@ public class Friend extends Person implements Catchable, DirectionRandomizable {
     }
 
     @Override
-    public void capture(){}
+    public void capture(){
+        getPosition().hide();
+        setCaught();
+    }
 
     @Override
     public void move() {
@@ -97,6 +106,6 @@ public class Friend extends Person implements Catchable, DirectionRandomizable {
 
     @Override
     public void setCaught() {
-        this.caught = !caught;
+        caught = !caught;
     }
 }

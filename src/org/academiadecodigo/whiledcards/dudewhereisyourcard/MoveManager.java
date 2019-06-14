@@ -13,6 +13,9 @@ public class MoveManager {
     private Position cadetPosition;
     private int cadetMoves;
     private Position friendPosition;
+    private Guard managerGuard;
+    private Friend managerFriend;
+    private CodeCadet managerCadet;
 
     public MoveManager(GameObject[] gameObjects) {
         this.gameObjects = gameObjects;
@@ -23,20 +26,31 @@ public class MoveManager {
         for (GameObject o : gameObjects) {
 
             if (o instanceof CodeCadet) {
+                managerCadet = ((CodeCadet) o);
                 cadetPosition = o.getPosition();
-                cadetMoves=cadetMoves + ((CodeCadet) o).sendmove();
+                if(!managerCadet.isDrunk()){
+                    cadetMoves=cadetMoves + ((CodeCadet) o).sendmove();
+                }
+
                 checkCadet(o);
 
             } else if (o instanceof Guard) {
+                managerGuard = ((Guard) o);
+                if(managerFriend.isCaught()){
+                    managerGuard.setTarget(cadetPosition);
+                }else{
+                    managerGuard.setTarget(friendPosition);
+                }
                 checkGuard(o);
             }else if(o instanceof Beer){
-                if(cadetMoves==100){
+                if(cadetMoves==30 && !managerCadet.isDrunk()){
                     ((Beer) o).refill();
                     ((Beer) o).setCaught(false);
-                    cadetMoves=0;
+
                 }
             }else if(o instanceof Friend){
                 friendPosition = o.getPosition();
+                managerFriend = ((Friend) o);
             }
         }
 
@@ -59,6 +73,7 @@ public class MoveManager {
                 if (ig.getPosition().getRow() == guard.getPosition().getRow() &&
                         ig.getPosition().getCol() == guard.getPosition().getCol()) {
                     ((Guard) guard).setTarget(cadetPosition);
+                    managerFriend.capture();
                     System.out.println("caught friend");
                 }
             }
@@ -79,7 +94,12 @@ public class MoveManager {
                 if (ig.getPosition().getRow() == gameObject.getPosition().getRow() &&
                         ig.getPosition().getCol() == gameObject.getPosition().getCol() && !beer.isCaught()) {
                     System.out.println("DRUNK");
+                    cadetMoves=0;
                     beer.capture();
+                    if(managerFriend.isCaught()) {
+                        managerFriend.setCaught();
+                        managerFriend.show();
+                    }
                     ((CodeCadet) gameObject).setDrunk(); //Cast to CodeCadet
                 }
             }
