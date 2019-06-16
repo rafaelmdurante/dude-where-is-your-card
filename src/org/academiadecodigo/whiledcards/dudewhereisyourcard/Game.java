@@ -13,12 +13,13 @@ public class Game {
     public void start() throws InterruptedException{
 
         try {
+            new Audio().runAudio();
             Grid grid = new Grid(25, 15);
             grid.init();
             Picture background = new Picture(10, 40, "background.png");
             background.draw();
 
-            new Audio().runAudio();
+
             Score score = new Score();
 
             CodeCadet cadet = new CodeCadet(grid, "codecadet.png", 1);
